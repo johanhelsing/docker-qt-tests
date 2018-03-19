@@ -10,4 +10,4 @@ cd build-qt
     -no-feature-vnc \
     -no-linuxfb \
     -feature-wayland-client
-make module-qtwayland
+time make module-qtwayland
