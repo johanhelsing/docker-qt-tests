@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 branch=5.11 #maybe set this from the Dockerfile
 rm -rf qt5
 git clone --depth 1 --branch $branch git://code.qt.io/qt/qt5.git

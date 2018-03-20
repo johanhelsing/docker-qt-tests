@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
         texinfo \
         unzip \
         vim \
+        weston \
         wget
 
 RUN id build 2>/dev/null || useradd --uid 1000 --create-home build
@@ -26,5 +27,8 @@ COPY clone-qt.sh /home/build
 RUN ./clone-qt.sh
 COPY build-qt.sh /home/build
 RUN ./build-qt.sh
+ENV XDG_RUNTIME_DIR=/tmp
+ENV QT_QPA_PLATFORM=wayland
+COPY test-qt.sh /home/build
 CMD "/bin/bash"
 
