@@ -10,5 +10,6 @@ cd build-qt
     -no-feature-vnc \
     -no-linuxfb \
     -nomake examples \
+    -nomake tests \
     -feature-wayland-client
-time make module-qtwayland
+time make -ks module-qtwayland
