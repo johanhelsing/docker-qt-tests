@@ -38,5 +38,4 @@ RUN ./build-qtwayland-tests.sh
 ENV XDG_RUNTIME_DIR=/tmp
 ENV QT_QPA_PLATFORM=wayland
 COPY test-qt.sh /home/build
-CMD "/bin/bash"
-
+CMD "./test-qt.sh"
