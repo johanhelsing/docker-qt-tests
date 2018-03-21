@@ -1,9 +1,12 @@
 #!/bin/bash
 set -ex
 qt5_rev=${QT_DOCKERTEST_QT5_REV:-5.11}
-rm -rf qt5
-mkdir qt5
-cd qt5
+
+srcdir=$(pwd)/qt5
+rm -rf $srcdir
+mkdir $srcdir
+cd $srcdir
+
 git init
 git remote add origin https://codereview.qt-project.org/qt/qt5.git
 git fetch --depth 1 origin "$qt5_rev"
@@ -14,7 +17,7 @@ git checkout FETCH_HEAD
 git submodule update --init --depth 50 -- qtbase qtxmlpatterns qtdeclarative qtwayland
 
 if [[ -v QT_DOCKERTEST_QTWAYLAND_REV ]] ; then
-    cd qtwayland
+    cd "$srcdir/qtwayland"
     git fetch --depth 1 origin "$QT_DOCKERTEST_QTWAYLAND_REV"
     git checkout FETCH_HEAD
 fi

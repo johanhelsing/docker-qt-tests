@@ -14,4 +14,4 @@ Build:
 
 Run:
 
-    $ docker run -it docker-qt-tests
+    $ docker run -e QT_DOCKERTEST_QTWAYLAND_REV=<sha1> -it docker-qt-tests
