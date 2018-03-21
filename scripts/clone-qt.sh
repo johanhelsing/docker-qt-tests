@@ -12,9 +12,10 @@ git remote add origin https://codereview.qt-project.org/qt/qt5.git
 git fetch --depth 1 origin "$qt5_rev"
 git checkout FETCH_HEAD
 
-#proper shallow cloning doesn't work for debian stretch for some reason
+#proper shallow cloning doesn't work for Debian Stretch for some reason
 #git submodule update --init --depth 1 -- qtbase qtxmlpatterns qtdeclarative qtwayland
-git submodule update --init --depth 50 -- qtbase qtxmlpatterns qtdeclarative qtwayland
+#git submodule update --init --depth 50 -- qtbase qtxmlpatterns qtdeclarative qtwayland
+git submodule update --init --depth 200 -- qtbase qtxmlpatterns qtdeclarative qtwayland
 
 if [[ -v QT_DOCKERTEST_QTWAYLAND_REV ]] ; then
     cd "$srcdir/qtwayland"
