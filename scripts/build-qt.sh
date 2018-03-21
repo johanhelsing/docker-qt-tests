@@ -12,4 +12,4 @@ cd build-qt
     -nomake examples \
     -nomake tests \
     -feature-wayland-client
-make -ks module-qtwayland
+make module-qtwayland
