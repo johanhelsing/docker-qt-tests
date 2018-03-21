@@ -1,9 +1,17 @@
 #!/bin/bash
 set -ex
-branch=5.11 #maybe set this from the Dockerfile
+qt5_rev=5.11 #maybe set this from the Dockerfile
+qtwayland_rev=5.11
 rm -rf qt5
-git clone --depth 1 --branch $branch git://code.qt.io/qt/qt5.git
+mkdir qt5
 cd qt5
-git submodule update --init -- qtbase qtxmlpatterns qtdeclarative qtwayland
+git init
+git remote add origin https://codereview.qt-project.org/qt/qt5.git
+git fetch --depth 1 origin "$qt5_rev"
+git checkout FETCH_HEAD
+
+git submodule update --init --depth 1 -- qtbase qtxmlpatterns qtdeclarative qtwayland
+
 cd qtwayland
-git checkout $branch
+git fetch --depth 1 origin "$qtwayland_rev"
+git checkout FETCH_HEAD
