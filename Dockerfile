@@ -23,21 +23,11 @@ RUN echo "build ALL=(ALL) NOPASSWD: ALL" | tee -a /etc/sudoers
 USER build
 WORKDIR /home/build/
 
-# TODO: everything from this point could be done by the container and not the image
-COPY clone-qt.sh /home/build
-RUN ./clone-qt.sh
-
-ENV MAKEFLAGS=-j8
-COPY build-qt.sh /home/build
-RUN ./build-qt.sh
-
-COPY build-qtbase-tests.sh /home/build
-RUN ./build-qtbase-tests.sh
-
-COPY build-qtwayland-tests.sh /home/build
-RUN ./build-qtwayland-tests.sh
+ENV QT_DOCKERTEST_QT5_REV=dev
 
 ENV XDG_RUNTIME_DIR=/tmp
 ENV QT_QPA_PLATFORM=wayland
-COPY test-qt.sh /home/build
-CMD "./test-qt.sh"
+ENV MAKEFLAGS=-j8
+
+COPY scripts/ /home/build/scripts
+CMD "./scripts/run.sh"
