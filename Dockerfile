@@ -22,6 +22,8 @@ RUN echo "build ALL=(ALL) NOPASSWD: ALL" | tee -a /etc/sudoers
 
 USER build
 WORKDIR /home/build/
+
+# TODO: everything from this point could be done by the container and not the image
 COPY clone-qt.sh /home/build
 RUN ./clone-qt.sh
 
