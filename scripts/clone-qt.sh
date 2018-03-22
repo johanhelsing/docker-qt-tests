@@ -15,7 +15,8 @@ git checkout FETCH_HEAD
 #proper shallow cloning doesn't work for Debian Stretch for some reason
 #git submodule update --init --depth 1 -- qtbase qtxmlpatterns qtdeclarative qtwayland
 #git submodule update --init --depth 50 -- qtbase qtxmlpatterns qtdeclarative qtwayland
-git submodule update --init --depth 200 -- qtbase qtxmlpatterns qtdeclarative qtwayland
+#git submodule update --init --depth 200 -- qtbase qtxmlpatterns qtdeclarative qtwayland
+git submodule update --init -- qtbase qtxmlpatterns qtdeclarative qtwayland
 
 if [[ -v QT_DOCKERTEST_QTWAYLAND_REV ]] ; then
     cd "$srcdir/qtwayland"
