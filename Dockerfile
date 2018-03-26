@@ -29,5 +29,9 @@ ENV XDG_RUNTIME_DIR=/tmp
 ENV QT_QPA_PLATFORM=wayland
 ENV MAKEFLAGS=-j8
 
+# Keep Qt source code as part of the image to avoid duplication
+COPY scripts/clone-qt.sh /home/build/scripts/clone-qt.sh
+RUN scripts/clone-qt.sh
+
 COPY scripts/ /home/build/scripts
 CMD "./scripts/run.sh"
