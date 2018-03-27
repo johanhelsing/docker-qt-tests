@@ -3,6 +3,7 @@ set -ex
 srcdir=$(pwd)/qt5
 qt5_rev=${QT_DOCKERTEST_QT5_REV:-5.11}
 
+cd $srcdir
 git fetch --depth 1 origin "$qt5_rev"
 git checkout FETCH_HEAD
 git submodule update --init -- qtbase qtxmlpatterns qtdeclarative qtwayland

@@ -2,7 +2,7 @@
 set -ex
 #time scripts/clone-qt.sh
 #echo Finished cloning
-time scripts/update-qt.sh
+time scripts/checkout-qt.sh
 echo Finished preparing sources
 time scripts/build-qt.sh
 echo Finished building
