@@ -3,6 +3,22 @@ set -ex
 buildDir=$(pwd)/build-qt
 weston --backend=headless-backend.so --idle-time=0 &
 
+# / tests
+
+#cd "$buildDir/qtbase/tests/auto/concurrent" && make check
+#cd "$buildDir/qtbase/tests/auto/corelib" && make check
+#cd "$buildDir/qtbase/tests/auto/cd "$buildDir/qtbase/tests/auto/gui" && make check #fails/hangs" && make check
+#cd "$buildDir/qtbase/tests/auto/installed_cmake" && make check
+#cd "$buildDir/qtbase/tests/auto/network" && make check
+cd "$buildDir/qtbase/tests/auto/opengl" && make check
+#cd "$buildDir/qtbase/tests/auto/other" && make check
+#cd "$buildDir/qtbase/tests/auto/printsupport" && make check
+#cd "$buildDir/qtbase/tests/auto/sql" && make check
+#cd "$buildDir/qtbase/tests/auto/testlib" && make check
+#cd "$buildDir/qtbase/tests/auto/tools" && make check
+#cd "$buildDir/qtbase/tests/auto/widgets" && make check
+#cd "$buildDir/qtbase/tests/auto/xml" && make check
+
 # gui tests
 
 #cd "$buildDir/qtbase/tests/auto/gui/image" && make check #hangs
