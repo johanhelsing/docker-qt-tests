@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 buildDir=$(pwd)/build-qt
-weston --backend=headless-backend.so &
+weston --backend=headless-backend.so --idle-time=0 &
 
 # gui tests
 
@@ -36,7 +36,7 @@ cd "$buildDir/qtbase/tests/auto/gui/kernel/qmouseevent_modal" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qopenglwindow" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qpalette" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qpixelformat" && make check
-#cd "$buildDir/qtbase/tests/auto/gui/kernel/qrasterwindow" && make check #fails!
+cd "$buildDir/qtbase/tests/auto/gui/kernel/qrasterwindow" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qscreen" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qsurfaceformat" && make check
 #cd "$buildDir/qtbase/tests/auto/gui/kernel/qtouchevent" && make check #fails!
