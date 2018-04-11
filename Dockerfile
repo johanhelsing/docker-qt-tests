@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
         git-core \
         libsdl1.2-dev \
         libwayland-dev \
+        libxkbcommon-dev \
         python-crypto \
         socat \
         texinfo \
