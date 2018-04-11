@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
         diffstat \
         gcc-multilib \
         git-core \
+        libegl1-mesa-dev \
         libsdl1.2-dev \
         libwayland-dev \
         libxkbcommon-dev \

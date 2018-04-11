@@ -11,5 +11,6 @@ cd build-qt
     -no-linuxfb \
     -nomake examples \
     -nomake tests \
-    -feature-wayland-client
+    -feature-wayland-client \
+    -feature-wayland-egl
 make module-qtwayland
