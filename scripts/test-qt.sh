@@ -57,3 +57,7 @@ cd "$buildDir/qtbase/tests/auto/gui/kernel/qscreen" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qsurfaceformat" && make check
 #cd "$buildDir/qtbase/tests/auto/gui/kernel/qtouchevent" && make check #fails!
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qwindow" && make check
+
+# Qt Wayland
+
+cd "$buildDir/qtwayland/tests/auto/" && make check
