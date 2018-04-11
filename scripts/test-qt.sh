@@ -33,7 +33,7 @@ cd "$buildDir/qtbase/tests/auto/gui/qopenglconfig" && make check
 # gui/kernel tests (remove this section when all pass and enable above)
 
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qbackingstore" && make check
-#cd "$buildDir/qtbase/tests/auto/gui/kernel/qclipboard" && make check #fails!
+cd "$buildDir/qtbase/tests/auto/gui/kernel/qclipboard" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qcursor" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qdrag" && make check
 cd "$buildDir/qtbase/tests/auto/gui/kernel/qevent" && make check
