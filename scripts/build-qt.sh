@@ -9,6 +9,7 @@ cd build-qt
     -no-xcb \
     -no-feature-vnc \
     -no-linuxfb \
+    -no-eglfs \
     -nomake examples \
     -nomake tests \
     -feature-wayland-client \
