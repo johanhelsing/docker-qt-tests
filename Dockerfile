@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
         gcc-multilib \
         git-core \
         libegl1-mesa-dev \
+        libfontconfig1-dev \
         libsdl1.2-dev \
         libwayland-dev \
         libxkbcommon-dev \
