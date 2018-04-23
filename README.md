@@ -10,7 +10,7 @@ Usage is very simple, like almost any other docker image
 
 Build:
 
-    $ docker build -t docker-qt-tests
+    $ docker build -t docker-qt-tests .
 
 Run:
 
