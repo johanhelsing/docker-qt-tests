@@ -14,4 +14,8 @@ Build:
 
 Run:
 
-    $ docker run -e QT_DOCKERTEST_QTWAYLAND_REV=<sha1> -it docker-qt-tests
+    $ docker run -e QT_DOCKERTEST_QTWAYLAND_REV=<sha1> -e QT_DOCKERTEST_QT5_REV=<sha1> -it docker-qt-tests
+
+I.e. to run tests on the 5.11 branch:
+
+    $ docker run -e QT_DOCKERTEST_QTWAYLAND_REV=5.11 -e QT_DOCKERTEST_QT5_REV=5.11 -it docker-qt-tests
