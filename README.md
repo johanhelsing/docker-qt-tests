@@ -32,3 +32,20 @@ in a config.opt file and running docker like this:
           -e QT_DOCKERTEST_QT5_REV=dev \
           -it docker-qt-tests
 
+### ccache volume
+
+If you run the image multiple times on similar patch sets, e.g. in CI systems,
+you can cache compilation results by using a shared ccache between different
+runs. Create a voume using:
+
+    $ docker volume create ccache
+
+And then launch like this
+
+    $ docker run -v ccache:/home/build/.ccache \
+          -e QT_DOCKERTEST_QTWAYLAND_REV=dev \
+          -e QT_DOCKERTEST_QT5_REV=dev \
+          -it docker-qt-tests
+
+By default the cache will be 5GiB, you might want to increase it slightly by
+editing ccache.conf in the volume.
