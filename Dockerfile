@@ -38,4 +38,5 @@ COPY scripts/clone-qt.sh /home/build/scripts/clone-qt.sh
 RUN scripts/clone-qt.sh
 
 COPY scripts/ /home/build/scripts
+COPY config.opt /etc/qt/config.opt
 CMD "./scripts/run.sh"

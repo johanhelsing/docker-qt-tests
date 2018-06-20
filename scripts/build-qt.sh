@@ -2,16 +2,6 @@
 set -ex
 mkdir -p build-qt
 cd build-qt
-../qt5/configure \
-    -opensource \
-    -confirm-license \
-    -developer-build \
-    -no-xcb \
-    -no-feature-vnc \
-    -no-linuxfb \
-    -no-eglfs \
-    -nomake examples \
-    -nomake tests \
-    -feature-wayland-client \
-    -feature-wayland-egl
+cp /etc/qt/config.opt .
+../qt5/configure -redo
 make module-qtwayland

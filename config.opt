@@ -1,0 +1,13 @@
+-opensource
+-confirm-license
+-developer-build
+-no-xcb
+-no-feature-vnc
+-no-linuxfb
+-no-eglfs
+-nomake
+examples
+-nomake
+tests
+-feature-wayland-client
+-feature-wayland-egl
