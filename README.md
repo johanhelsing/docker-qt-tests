@@ -24,3 +24,11 @@ You can also test changes on codereview.qt-project.org by copying the `refs/xx/c
 
     $ docker run -e QT_DOCKERTEST_QTWAYLAND_REV=refs/changes/26/231726/2 -e QT_DOCKERTEST_QT5_REV=dev -it docker-qt-tests
 
+If you want to pass custom options to configure, you can do so by putting them
+in a config.opt file and running docker like this:
+
+    $ docker run -v /path/to/custom/config.opt:/etc/qt/config.opt \
+          -e QT_DOCKERTEST_QTWAYLAND_REV=dev \
+          -e QT_DOCKERTEST_QT5_REV=dev \
+          -it docker-qt-tests
+
