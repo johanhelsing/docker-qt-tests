@@ -39,4 +39,9 @@ RUN scripts/clone-qt.sh
 
 COPY scripts/ /home/build/scripts
 COPY config.opt /etc/qt/config.opt
-CMD "./scripts/run.sh"
+
+# Set ccache config default just in case
+RUN mkdir -p /home/build/.ccache
+ENV CCACHE_DIR=/home/build/.ccache
+
+CMD export PATH=/usr/lib/ccache:$PATH; ./scripts/run.sh
