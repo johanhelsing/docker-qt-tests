@@ -3,6 +3,9 @@ set -ex
 buildDir=$(pwd)/build-qt
 weston --backend=headless-backend.so --idle-time=0 &
 
+# Give the compositor some time to start up
+sleep 5
+
 # / tests
 
 #cd "$buildDir/qtbase/tests/auto/concurrent" && make check
